@@ -1,0 +1,19 @@
+{
+    "name": "jstormes/bootstrap",
+    "description": "Bootstrap support library for ZF2",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "jstormes",
+            "email": "jstormes@stormes.net"
+        }
+    ],
+    "require": {
+	"php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "JStormes\\Bootstrap\\": "src/"
+        }
+    }
+}
