@@ -3,6 +3,11 @@ By [James Stormes](http://www.stormes.net)
 
 ZF2 Module for better support of Twitter Bootstrap
 
+## Table of Contents
+1. [Introduction](#Introduction)
+2. [Installation via Composer](#Installation via Composer)
+3. [Usage](#Usage)
+
 ## Introduction
 This module is intended for usage with a default directory structure of a [ZendSkeletonApplication](https://github.com/zendframework/ZendSkeletonApplication/).  It provides view helpers and support classes for the [Twitter Bootstrap](http://getbootstrap.com/) framework.
 
@@ -35,6 +40,7 @@ NOTE: The Bootstrap CSS and JS files must be included in your layout for this mo
 
 
 ### Boostrap Menu
+The menu code in this module produces a very generic Bootstrap styled menu for the [Navbar](http://getbootstrap.com/components/#navbar).
 
 
 #### In the *.config.php
@@ -42,6 +48,7 @@ NOTE: The Bootstrap CSS and JS files must be included in your layout for this mo
 To enable the Bootstrap styled menu
 
 ```
+	//...
    'jstormes' => array(
         'bootstrap' => array(
             'menu' => array(
@@ -49,21 +56,25 @@ To enable the Bootstrap styled menu
             ),
         ),
     ),
+    //...
 ```
 (Optionally) enable the Zend navigation factory
 
 ```
+  //...
   'service_manager' => array(
     'factories' => array(
        'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
     ),
   ),
+  //...
 
 ```
 (Optionally) specify the navigation structure
 
 ```
-'navigation' => array(
+    //...
+    'navigation' => array(
         'default' => array(
             array(
                 'label' => 'Home',
@@ -85,12 +96,16 @@ To enable the Bootstrap styled menu
             ),
         ),
     ),
+    //...
 ```
-In the layout, place the folling code where you want the menu:
+#### In the layout
+Place the following where the menu should appear.
 
 ```
+  <!-- ... -->
   <ul class="nav navbar-nav">
       <?php echo $this->navigation('navigation')->menu()->render(); ?>
   </ul>
+  <!-- ... -->
 ```
 
