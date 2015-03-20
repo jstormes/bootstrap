@@ -29,23 +29,7 @@ sh ./composer.phar require jstormes/bootstrap
    //...
 ```
 
-#### 3. Add Bootstrap CSS and JS to your layout
-
-```
-        <!-- Le styles -->
-        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
-                        ->prependStylesheet($this->basePath() . '/css/style.css')
-                        ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
-                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
-
-        <!-- Scripts -->
-        <?php echo $this->headScript()
-            ->prependFile($this->basePath() . '/js/bootstrap.min.js')
-            ->prependFile($this->basePath() . '/js/jquery.min.js')
-            ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
-            ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
-        ?>
-```
+NOTE: The Bootstrap CSS and JS files must be included in your layout for this module to be useful.
 
 ## Usage
 
@@ -55,7 +39,7 @@ sh ./composer.phar require jstormes/bootstrap
 
 #### In the *.config.php
 
-To enable the Tootstrap styled menu
+To enable the Bootstrap styled menu
 
 ```
    'jstormes' => array(
