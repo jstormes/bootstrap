@@ -110,3 +110,5 @@ Place the following where the menu should appear.
   <!-- ... -->
 ```
 
+In the `Setup/Sample_Layouts` there is a sample of the navigation in a stock ZF2 Skeleton layout.
+
