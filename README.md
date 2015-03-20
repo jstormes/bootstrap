@@ -7,8 +7,7 @@ ZF2 Module for better support of Twitter Bootstrap
 1. [Introduction](#introduction)
 2. [Installation via Composer](#installation-via-composer)
 3. [Usage](#usage)
-..1. [Boostrap Menu](#boostrap-menu)
-4. 
+   * [Boostrap Navbar](#boostrap-navbar)
 
 ## Introduction
 This module is intended for usage with a default directory structure of a [ZendSkeletonApplication](https://github.com/zendframework/ZendSkeletonApplication/).  It provides view helpers and support classes for the [Twitter Bootstrap](http://getbootstrap.com/) framework.
@@ -41,8 +40,8 @@ NOTE: The Bootstrap CSS and JS files must be included in your layout for this mo
 ## Usage
 
 
-### Boostrap Menu
-The menu code in this module produces a very generic Bootstrap styled menu for the [Navbar](http://getbootstrap.com/components/#navbar).
+### Boostrap Navbar
+The menu code in this module produces a very generic Bootstrap styled menu (\<ul\>/\<li\> tags) for the [Navbar](http://getbootstrap.com/components/#navbar).
 
 
 #### In the *.config.php
