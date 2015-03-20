@@ -1,6 +1,6 @@
 {
     "name": "jstormes/bootstrap",
-    "description": "Bootstrap support library for ZF2",
+    "description": "Twitter Bootstrap support library for ZF2",
     "type" : "library",
     "license": "GPL-2.0",
     "authors": [

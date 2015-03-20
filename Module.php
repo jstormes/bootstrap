@@ -19,14 +19,22 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
         
-        // get navigation plugin from service manager
-        $viewManager = $e->getApplication()->getServiceManager()->get('viewmanager');
-        $navigation = $viewManager->getRenderer()->plugin('navigation');
+        $application = $e->getApplication();
+        $config = $application->getConfig();
         
-        // overwrite default menu plugin
-        $navigation->getPluginManager()->setInvokableClass(
-            'menu', 'JStormes\Bootstrap\View\Helper\Navigation\Menu', true
-        );
+        if (array_key_exists('jstormes',$config)) {
+                if (isset($config['jstormes']['bootstrap']['menu']['enabled'])) {
+                    
+                // get navigation plugin from service manager
+                $viewManager = $application->getServiceManager()->get('viewmanager');
+                $navigation = $viewManager->getRenderer()->plugin('navigation');
+                
+                // overwrite default menu plugin
+                $navigation->getPluginManager()->setInvokableClass(
+                    'menu', 'JStormes\Bootstrap\View\Helper\Navigation\Menu', true
+                );
+            }
+        }
     }
 
     /**
