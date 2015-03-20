@@ -13,7 +13,20 @@ class Module
      */
     public function onBootstrap(MvcEvent $e)
     {
-        return;
+        // You may not need to do this if you're doing it elsewhere in your
+        // application
+        $eventManager        = $e->getApplication()->getEventManager();
+        $moduleRouteListener = new ModuleRouteListener();
+        $moduleRouteListener->attach($eventManager);
+        
+        // get navigation plugin from service manager
+        $viewManager = $e->getApplication()->getServiceManager()->get('viewmanager');
+        $navigation = $viewManager->getRenderer()->plugin('navigation');
+        
+        // overwrite default menu plugin
+        $navigation->getPluginManager()->setInvokableClass(
+            'menu', 'JStormes\Bootstrap\View\Helper\Navigation\Menu', true
+        );
     }
 
     /**

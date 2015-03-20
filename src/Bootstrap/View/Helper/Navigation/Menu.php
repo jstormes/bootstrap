@@ -7,7 +7,7 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Stormes\Bootstrap\View\Helper\Navigation;
+namespace JStormes\Bootstrap\View\Helper\Navigation;
 
 use RecursiveIteratorIterator;
 use Zend\Navigation\AbstractContainer;
