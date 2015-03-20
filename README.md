@@ -74,7 +74,6 @@ To enable the Bootstrap styled menu
 (Optionally) specify the navigation structure
 
 ```
-    //...
     'navigation' => array(
         'default' => array(
             array(
@@ -82,18 +81,28 @@ To enable the Bootstrap styled menu
                 'route' => 'home',
             ),
             array(
-                'label' => 'Page #1',
-                'route' => 'home',
+                'label' => 'Submenu',
+                'route' => 'application',
                 'pages' => array(
                     array(
-                        'label' => 'Child #1',
-                        'route' => 'home',
+                        'label'      => 'Item 1',
+                        'route'      => 'application/default',
+                        'controller' => 'index',
+                        'action'     => 'item1'
+                    ),
+                    array(
+                        'label'      => 'Item 2',
+                        'route'      => 'application/default',
+                        'controller' => 'index',
+                        'action'     => 'item2'
                     ),
                 ),
             ),
-            array(
+            'pages' =>array(
                 'label' => 'Page #2',
-                'route' => 'home',
+                'route' => 'application/default',
+                'controller' => 'page2',
+                'action' => 'index'
             ),
         ),
     ),
