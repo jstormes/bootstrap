@@ -19,22 +19,23 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
         
-        $application = $e->getApplication();
-        $config = $application->getConfig();
+        // I woudl like for this to live in the configuration file but I was unable to 
+        // to succefully do that.  Might not be possible, see comments at: 
+        // http://framework.zend.com/manual/current/en/modules/zend.navigation.view.helper.navigation.html
+        // James Stormes
         
-        if (array_key_exists('jstormes',$config)) {
-                if (isset($config['jstormes']['bootstrap']['menu']['enabled'])) {
-                    
-                // get navigation plugin from service manager
-                $viewManager = $application->getServiceManager()->get('viewmanager');
-                $navigation = $viewManager->getRenderer()->plugin('navigation');
-                
-                // overwrite default menu plugin
-                $navigation->getPluginManager()->setInvokableClass(
-                    'menu', 'JStormes\Bootstrap\View\Helper\Navigation\Menu', true
-                );
-            }
-        }
+        $application = $e->getApplication();
+           
+        // get navigation plugin from service manager
+        $viewManager = $application->getServiceManager()->get('viewmanager');
+        $navigation = $viewManager->getRenderer()->plugin('navigation');
+        
+
+        // overwrite default menu plugin
+        $navigation->getPluginManager()->setInvokableClass(
+            'bootstrap_nav', 'JStormes\Bootstrap\View\Helper\Navigation\BootstrapNav', true
+        );
+
     }
 
     /**

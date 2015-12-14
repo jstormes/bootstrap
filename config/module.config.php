@@ -8,7 +8,9 @@ return array(
     'view_helpers' => array(
         'invokables' => array(
             'HorizontalText' => 'JStormes\Bootstrap\View\Helper\Form\HorizontalText',
+ //           'BootstrapNav' => 'JStormes\Bootstrap\View\Helper\Navigation\BootstrapNav',
         ),
     ),
+    
     
 );
